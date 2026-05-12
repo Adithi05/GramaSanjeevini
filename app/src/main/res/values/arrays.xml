@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string-array name="locations">
+        <item>Bidadi</item>
+        <item>Mysore</item>
+        <item>Bangalore</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>Kannada</item>
+        <item>Hindi</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "161098911737",
+    "project_id": "gramasnjeevini",
+    "storage_bucket": "gramasnjeevini.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161098911737:android:4b12ac2932d8fa5ddd3728",
+        "android_client_info": {
+          "package_name": "com.example.gramasnjeevini"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR6AYuyH1A8_E75bAwloO0MJPr_tA_70s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

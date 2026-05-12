@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="24dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+
+        <!-- NAME -->
+
+        <TextView
+            android:id="@+id/pharmacyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2F855A"
+            android:textSize="34sp"
+            android:textStyle="bold"/>
+
+        <!-- ADDRESS -->
+
+        <TextView
+            android:id="@+id/pharmacyLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5B665E"
+            android:textSize="20sp"
+            android:layout_marginTop="14dp"
+            android:text="📍 Bidadi, Ramanagara"/>
+
+        <!-- TIMING -->
+
+        <TextView
+            android:id="@+id/pharmacyTiming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5B665E"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp"
+            android:text="🕒 8:00 AM - 9:00 PM"/>
+
+        <!-- PHONE -->
+
+        <TextView
+            android:id="@+id/pharmacyPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#5B665E"
+            android:textSize="20sp"
+            android:layout_marginTop="12dp"
+            android:text="📞 +91 9876543210"/>
+
+        <!-- BUTTON -->
+
+        <Button
+            android:id="@+id/viewInventoryButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="View Inventory"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#2F855A"
+            android:backgroundTint="#F4F7F2"
+            android:layout_marginTop="28dp"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

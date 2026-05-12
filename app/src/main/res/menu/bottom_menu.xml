@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergencyhelp" />
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@android:drawable/ic_menu_view"/>
+
+    <item
+        android:id="@+id/medicine"
+        android:title="Medicine"
+        android:icon="@android:drawable/ic_menu_search"/>
+
+    <item
+        android:id="@+id/pharmacy"
+        android:title="Pharmacy"
+        android:icon="@android:drawable/ic_menu_mylocation"/>
+
+    <item
+        android:id="@+id/emergency"
+        android:title="Emergency"
+        android:icon="@android:drawable/ic_dialog_alert"/>
+
+</menu>
