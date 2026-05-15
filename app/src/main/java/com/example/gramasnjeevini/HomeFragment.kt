@@ -5,24 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.firestore.FirebaseFirestore
+import android.widget.TextView
 
 class HomeFragment : Fragment() {
-
-    // PHARMACY
-
-    private lateinit var pharmacyRecyclerView: RecyclerView
-    private lateinit var pharmacyAdapter: PharmacyAdapter
-    private lateinit var pharmacyList: ArrayList<Pharmacy>
-
-    // MEDICINES
-
-
-
-    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,32 +25,6 @@ class HomeFragment : Fragment() {
                 container,
                 false
             )
-
-        firestore = FirebaseFirestore.getInstance()
-
-        // MEDICINE RECYCLER VIEW
-
-
-
-        // PHARMACY RECYCLER VIEW
-
-        pharmacyRecyclerView =
-            view.findViewById(R.id.pharmacyRecyclerView)
-
-        pharmacyRecyclerView.layoutManager =
-            LinearLayoutManager(requireContext())
-
-        pharmacyList = ArrayList()
-
-        pharmacyAdapter = PharmacyAdapter(pharmacyList)
-
-        pharmacyRecyclerView.adapter = pharmacyAdapter
-
-        // LOAD DATA
-
-
-
-        loadPharmacies()
 
         // EMERGENCY CARD
 
@@ -78,36 +41,113 @@ class HomeFragment : Fragment() {
             )
         }
 
+        // VIEW INVENTORY BUTTON 1
 
+        val inventoryBtn1 =
+            view.findViewById<View>(R.id.viewInventoryBtn1)
 
-        return view
-    }
+        inventoryBtn1.setOnClickListener {
 
-    // LOAD MEDICINES
+            startActivity(
+                Intent(
+                    requireContext(),
+                    InventoryActivity::class.java
+                )
+            )
+        }
 
+        // VIEW INVENTORY BUTTON 2
 
+        val inventoryBtn2 =
+            view.findViewById<View>(R.id.viewInventoryBtn2)
 
-    // LOAD PHARMACIES
+        inventoryBtn2.setOnClickListener {
 
-    private fun loadPharmacies() {
+            startActivity(
+                Intent(
+                    requireContext(),
+                    InventoryActivity::class.java
+                )
+            )
+        }
 
-        firestore.collection("pharmacies")
-            .get()
-            .addOnSuccessListener { result ->
+        // EMERGENCY LIST BUTTON
 
-                pharmacyList.clear()
+        val emergencyBtn =
+            view.findViewById<View>(R.id.emergencyListBtn)
 
-                for (document in result) {
+        emergencyBtn.setOnClickListener {
 
-                    val pharmacy =
-                        document.toObject(Pharmacy::class.java)
+            startActivity(
+                Intent(
+                    requireContext(),
+                    EmergencyActivity::class.java
+                )
+            )
+        }
 
+        // SEARCH MEDICINE
+        val searchEditText =
+            view.findViewById<EditText>(R.id.searchEditText)
 
+        val searchButton =
+            view.findViewById<Button>(R.id.searchButton)
 
-                    pharmacyList.add(pharmacy)
-                }
+        val resultCard =
+            view.findViewById<View>(R.id.searchResultCard)
 
-                pharmacyAdapter.notifyDataSetChanged()
+        val resultMedicineName =
+            view.findViewById<TextView>(R.id.resultMedicineName)
+
+        val resultStock =
+            view.findViewById<TextView>(R.id.resultStock)
+        val checkAvailabilityButton =
+            view.findViewById<Button>(
+                R.id.checkAvailabilityButton
+            )
+
+        searchButton.setOnClickListener {
+
+            val medicine =
+                searchEditText.text.toString()
+
+            if (medicine.isNotEmpty()) {
+
+                resultCard.visibility = View.VISIBLE
+
+                resultMedicineName.text =
+                    medicine + " 500mg"
+
+                resultStock.text =
+                    "In Stock (270)"
+
+            } else {
+
+                resultCard.visibility = View.GONE
+
+                Toast.makeText(
+                    requireContext(),
+                    "Enter medicine name",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+        }
+
+        checkAvailabilityButton.setOnClickListener {
+
+            Toast.makeText(
+                requireContext(),
+                "Medicine available at nearby pharmacies",
+                Toast.LENGTH_SHORT
+            ).show()
+
+            startActivity(
+                Intent(
+                    requireContext(),
+                    InventoryActivity::class.java
+                )
+            )
+        }
+        return view
     }
 }

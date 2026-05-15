@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <Spinner
+        android:id="@+id/medicineSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/stockInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Stock"
+        android:layout_marginTop="16dp"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/priceInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:layout_marginTop="16dp"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/expiryInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Expiry Date"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/batchInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Batch Number"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

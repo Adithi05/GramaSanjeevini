@@ -53,7 +53,7 @@ class PharmacyAdapter(
             pharmacy.name
 
         holder.pharmacyLocation.text =
-            "📍 ${pharmacy.location}"
+            "📍 ${pharmacy.address}"
 
         holder.pharmacyTiming.text =
             "🕒 ${pharmacy.hours}"

@@ -3,15 +3,7 @@
     <style name="Theme.GramaSnjeevini"
         parent="Theme.Material3.DayNight.NoActionBar">
 
-        <item name="colorPrimary">@color/primaryGreen</item>
-
-        <item name="android:statusBarColor">
-            @color/primaryGreen
-        </item>
-
-        <item name="android:windowBackground">
-            @color/softBackground
-        </item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
 
     </style>
 

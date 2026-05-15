@@ -22,7 +22,7 @@
         android:id="@+id/pharmacistEmail"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:hint="Email"/>
+        android:hint="Username"/>
 
     <EditText
         android:id="@+id/pharmacistPassword"
@@ -40,5 +40,16 @@
         android:textAllCaps="false"
         android:backgroundTint="#2F855A"
         android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/createAccountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create New Account"
+        android:textColor="#2F855A"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

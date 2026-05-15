@@ -22,12 +22,15 @@
             android:padding="28dp">
 
             <TextView
+                android:id="@+id/backHomeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="← Back to Home"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,7 +86,7 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!-- MEDICINE CARD -->
+        <!-- MEDICINE CARD 1 -->
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -106,40 +109,33 @@
                     android:text="Activated Charcoal"
                     android:textColor="#C53030"
                     android:textStyle="bold"
-                    android:textSize="34sp"/>
+                    android:textSize="30sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Activated Charcoal • sachet"
+                    android:text="Activated Charcoal • Sachet"
                     android:textColor="#5B665E"
                     android:textSize="18sp"
                     android:layout_marginTop="8dp"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="24dp">
+                    android:text="📍 Ramanagara Sevaka Medicals"
+                    android:textColor="#2F855A"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="18dp"/>
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="📍 Ramanagara Sevaka Medicals"
-                        android:textColor="#2F855A"
-                        android:textStyle="bold"
-                        android:textSize="20sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="107 units nearby"
-                        android:textColor="@android:color/white"
-                        android:padding="10dp"
-                        android:textStyle="bold"
-                        android:background="#E52525"/>
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="107 units nearby"
+                    android:textColor="#E52525"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -148,12 +144,87 @@
                     android:textColor="#111827"
                     android:textStyle="bold"
                     android:textSize="28sp"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="18dp"/>
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="22dp"
+                    android:text="Call Clinic"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#2F855A"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- MEDICINE CARD 2 -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="24dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paracetamol"
+                    android:textColor="#C53030"
+                    android:textStyle="bold"
+                    android:textSize="30sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paracetamol • Tablet"
+                    android:textColor="#5B665E"
+                    android:textSize="18sp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Bidadi Jana Aushadhi"
+                    android:textColor="#2F855A"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="84 units nearby"
+                    android:textColor="#E52525"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹15"
+                    android:textColor="#111827"
+                    android:textStyle="bold"
+                    android:textSize="28sp"
+                    android:layout_marginTop="18dp"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="22dp"
                     android:text="Call Clinic"
                     android:textAllCaps="false"
                     android:textStyle="bold"

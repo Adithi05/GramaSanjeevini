@@ -12,47 +12,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- TOP BAR -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@android:color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp">
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:src="@android:drawable/ic_menu_compass"
-                android:tint="#2F855A"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Grama-Sanjeevini"
-                    android:textColor="#2F855A"
-                    android:textStyle="bold"
-                    android:textSize="28sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bidadi"
-                    android:textColor="#6B7280"
-                    android:textSize="14sp"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
         <!-- HERO SECTION -->
 
         <LinearLayout
@@ -77,15 +36,13 @@
                 android:textColor="#5B665E"
                 android:textSize="18sp"
                 android:layout_marginTop="20dp"/>
+
             <!-- ALERTS CARD -->
 
             <androidx.cardview.widget.CardView
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="#FFF8E1">
@@ -151,6 +108,7 @@
                     android:tint="#6B7280"/>
 
                 <EditText
+                    android:id="@+id/searchEditText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -160,6 +118,7 @@
                     android:paddingStart="12dp"/>
 
                 <Button
+                    android:id="@+id/searchButton"
                     android:layout_width="110dp"
                     android:layout_height="50dp"
                     android:text="Search"
@@ -171,30 +130,87 @@
             </LinearLayout>
 
         </LinearLayout>
+        <!-- SEARCH RESULT CARD -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchResultCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <TextView
+                    android:id="@+id/resultMedicineName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paracetamol 500mg"
+                    android:textColor="#2F855A"
+                    android:textStyle="bold"
+                    android:textSize="28sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medicine available near Bidadi"
+                    android:textColor="#5B665E"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/resultStock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="In Stock (270)"
+                    android:textColor="#2F855A"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginTop="18dp"/>
+
+                <Button
+                    android:id="@+id/checkAvailabilityButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Check Availability"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#2F855A"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <!-- DASHBOARD CARDS -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="20dp">
 
             <!-- EMERGENCY CARD -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/emergencyCard"
-                android:layout_width="0dp"
-                android:layout_height="210dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="10dp"
-                app:cardCornerRadius="26dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="#FFF1F1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="22dp">
 
@@ -204,20 +220,21 @@
                         android:text="Emergency"
                         android:textColor="#E53E3E"
                         android:textStyle="bold"
-                        android:textSize="26sp"/>
+                        android:textSize="22sp"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Find life-saving medicines and nearby clinics instantly."
                         android:textColor="#5B665E"
                         android:textSize="15sp"
-                        android:layout_marginTop="18dp"/>
+                        android:layout_marginTop="14dp"/>
 
                     <Button
+                        android:id="@+id/emergencyListBtn"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="20dp"
                         android:text="View Emergency List"
                         android:textAllCaps="false"
                         android:textStyle="bold"
@@ -231,18 +248,19 @@
             <!-- MEDICINES CARD -->
 
             <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="210dp"
-                android:layout_weight="1"
-                android:layout_marginStart="10dp"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="2dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFF1F1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="22dp">
+                    android:padding="26dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -250,15 +268,15 @@
                         android:text="Medicines"
                         android:textColor="#DD6B20"
                         android:textStyle="bold"
-                        android:textSize="26sp"/>
+                        android:textSize="22sp"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Units of medicine tracked in real-time inventory."
                         android:textColor="#5B665E"
                         android:textSize="15sp"
-                        android:layout_marginTop="18dp"/>
+                        android:layout_marginTop="14dp"/>
 
                 </LinearLayout>
 
@@ -266,185 +284,135 @@
 
         </LinearLayout>
 
-        <!-- TITLE -->
+        <!-- PHARMACY CARD 1 -->
 
-
-
-        <!-- PHARMACIES -->
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/pharmacyRecyclerView"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pharmacies near Bidadi"
-            android:textColor="#2F855A"
-            android:textStyle="bold"
-            android:textSize="32sp"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="18dp"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp">
-
-            <!-- PHARMACY CARD 1 -->
-
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="22dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="@android:color/white">
+                android:orientation="vertical"
+                android:padding="22dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="22dp">
+                    android:text="Bidadi Jana Aushadhi Kendra"
+                    android:textColor="#2F855A"
+                    android:textStyle="bold"
+                    android:textSize="24sp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bidadi Jana Aushadhi Kendra"
-                        android:textColor="#2F855A"
-                        android:textStyle="bold"
-                        android:textSize="28sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="📍 Bidadi, Ramanagara"
-                        android:textSize="16sp"
-                        android:textColor="#5B665E"
-                        android:layout_marginTop="12dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="🕒 8:00 AM - 9:00 PM"
-                        android:textSize="16sp"
-                        android:textColor="#5B665E"
-                        android:layout_marginTop="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="📞 +918012345601"
-                        android:textSize="16sp"
-                        android:textColor="#5B665E"
-                        android:layout_marginTop="8dp"/>
-
-                    <Button
-                        android:id="@+id/viewInventoryBtn"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="20dp"
-                        android:text="View Inventory"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="#2F855A"
-                        android:backgroundTint="#F5F7F4"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- PHARMACY CARD 2 -->
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="22dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="@android:color/white">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="22dp">
+                    android:text="📍 Bidadi, Ramanagara"
+                    android:textColor="#5B665E"
+                    android:textSize="16sp"
+                    android:layout_marginTop="12dp"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ramanagara Sevaka Medicals"
-                        android:textColor="#2F855A"
-                        android:textStyle="bold"
-                        android:textSize="28sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="📍 Ramanagara"
-                        android:textSize="16sp"
-                        android:textColor="#5B665E"
-                        android:layout_marginTop="12dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="🕒 7:00 AM - 10:00 PM"
-                        android:textSize="16sp"
-                        android:textColor="#5B665E"
-                        android:layout_marginTop="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="📞 +918012345605"
-                        android:textSize="16sp"
-                        android:textColor="#5B665E"
-                        android:layout_marginTop="8dp"/>
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="20dp"
-                        android:text="View Inventory"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:textColor="#2F855A"
-                        android:backgroundTint="#F5F7F4"/>
-
-                </LinearLayout>
-                <!-- PHARMACY SECTION -->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    android:gravity="center_vertical">
+                    android:text="🕒 8:00 AM - 9:00 PM"
+                    android:textColor="#5B665E"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
 
-
-                </LinearLayout>
-
-                <!-- PHARMACY LIST -->
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/pharmacyRecyclerView"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="📞 +918012345601"
+                    android:textColor="#5B665E"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:id="@+id/viewInventoryBtn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:paddingLeft="24dp"
-                    android:paddingRight="24dp"
-                    android:nestedScrollingEnabled="false"/>
+                    android:text="View Inventory"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#2F855A"
+                    android:backgroundTint="#F5F7F4"/>
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- PHARMACY CARD 2 -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Magadi Health Mart"
+                    android:textColor="#2F855A"
+                    android:textStyle="bold"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Magadi, Ramanagara"
+                    android:textColor="#5B665E"
+                    android:textSize="16sp"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🕒 Open 24 Hours"
+                    android:textColor="#5B665E"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📞 +918012345602"
+                    android:textColor="#5B665E"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:id="@+id/viewInventoryBtn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="View Inventory"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="#2F855A"
+                    android:backgroundTint="#F5F7F4"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 

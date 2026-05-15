@@ -6,7 +6,7 @@ data class Pharmacy(
 
     var name: String = "",
 
-    var location: String = "",
+    var address: String = "",
 
     var hours: String = "",
 

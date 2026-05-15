@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -12,36 +13,71 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GramaSnjeevini">
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".EmergencyActivity"/>
-
-        <activity android:name=".PharmacistLoginActivity"/>
-
-
-        <activity android:name=".AdminLoginActivity"/>
-
-        <activity android:name=".PharmacistDashboardActivity"/>
-        <activity android:name=".InventoryActivity"/>
-        <activity android:name=".AlertsActivity"/>
+        <!-- SPLASH SCREEN -->
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".SplashActivity"
             android:exported="true">
 
-
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
 
         </activity>
+
+        <!-- MAIN SCREEN -->
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- PHARMACIST LOGIN -->
+
+        <activity
+            android:name=".PharmacistLoginActivity"
+            android:exported="false" />
+
+        <!-- PHARMACIST DASHBOARD -->
+
+        <activity
+            android:name=".PharmacistDashboardActivity"
+            android:exported="false" />
+
+        <!-- REGISTER -->
+
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+
+        <!-- EMERGENCY -->
+
+        <activity
+            android:name=".EmergencyActivity"
+            android:exported="false" />
+
+        <!-- ALERTS -->
+
+        <activity
+            android:name=".AlertsActivity"
+            android:exported="false" />
+
+        <!-- INVENTORY -->
+
+        <activity
+            android:name=".InventoryActivity"
+            android:exported="false" />
+
+        <!-- ADMIN LOGIN -->
+
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="false" />
 
     </application>
 

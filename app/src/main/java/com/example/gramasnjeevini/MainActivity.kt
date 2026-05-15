@@ -2,13 +2,12 @@ package com.example.gramasnjeevini
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Button
+import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,48 +34,81 @@ class MainActivity : AppCompatActivity() {
         val closeDrawer =
             findViewById<ImageButton>(R.id.closeDrawer)
 
+        // OPEN SIDEBAR
+
         menuButton.setOnClickListener {
 
             drawerLayout.openDrawer(GravityCompat.START)
         }
 
+        // CLOSE SIDEBAR
+
         closeDrawer.setOnClickListener {
 
             drawerLayout.closeDrawer(GravityCompat.START)
         }
-        val alertsButton =
-            findViewById<Button>(R.id.alertsButton)
 
-        alertsButton.setOnClickListener {
+        // DASHBOARD BUTTON
 
-            startActivity(
-                Intent(this, AlertsActivity::class.java)
-            )
-        }
+        findViewById<Button>(R.id.dashboardButton)
+            .setOnClickListener {
 
-        val locationSpinner =
-            findViewById<Spinner>(R.id.locationSpinner)
+                val sharedPreferences =
+                    getSharedPreferences(
+                        "PharmacistSession",
+                        MODE_PRIVATE
+                    )
 
-        val languageSpinner =
-            findViewById<Spinner>(R.id.languageSpinner)
+                val isLoggedIn =
+                    sharedPreferences.getBoolean(
+                        "isLoggedIn",
+                        false
+                    )
 
-        val locationAdapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.locations,
-            android.R.layout.simple_spinner_dropdown_item
-        )
+                if (isLoggedIn) {
 
-        locationSpinner.adapter = locationAdapter
+                    startActivity(
+                        Intent(
+                            this,
+                            PharmacistDashboardActivity::class.java
+                        )
+                    )
 
-        val languageAdapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.languages,
-            android.R.layout.simple_spinner_dropdown_item
-        )
+                } else {
 
-        languageSpinner.adapter = languageAdapter
+                    startActivity(
+                        Intent(
+                            this,
+                            PharmacistLoginActivity::class.java
+                        )
+                    )
+                }
+            }
 
+        // ALERTS BUTTON
 
+        findViewById<Button>(R.id.alertsButton)
+            .setOnClickListener {
 
+                startActivity(
+                    Intent(
+                        this,
+                        AlertsActivity::class.java
+                    )
+                )
+            }
+
+        // EMERGENCY BUTTON
+
+        findViewById<Button>(R.id.emergencyButton)
+            .setOnClickListener {
+
+                startActivity(
+                    Intent(
+                        this,
+                        EmergencyActivity::class.java
+                    )
+                )
+            }
     }
 }

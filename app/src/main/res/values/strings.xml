@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">GramaSnjeevini</string>
+
+    <string name="app_name">Grama-Sanjeevini</string>
+
+    <string name="find_medicines">
+        Find medicines in your village.
+    </string>
+
+    <string name="search_hint">
+        Search for medicines...
+    </string>
+
+    <string name="emergency">Emergency</string>
+
+    <string name="alerts">Alerts</string>
+
 </resources>

@@ -17,6 +17,7 @@
         android:textColor="#2F855A"/>
 
     <Button
+        android:id="@+id/addMedicineButton"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:text="Add Medicine"
@@ -25,11 +26,18 @@
         android:backgroundTint="#2F855A"/>
 
     <Button
+        android:id="@+id/updateStockButton"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:text="Update Stock"
         android:textAllCaps="false"
         android:layout_marginTop="16dp"
         android:backgroundTint="#2F855A"/>
+
+    <Button
+        android:id="@+id/signOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"/>
 
 </LinearLayout>

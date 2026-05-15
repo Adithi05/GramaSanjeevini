@@ -29,35 +29,7 @@ class PharmacyFragment : Fragment() {
         pharmacyList = ArrayList()
 
 
-        pharmacyList.add(
-            Pharmacy(
-                1,
-                "Bidadi Jana Aushadhi Kendra",
-                "Bidadi, Ramanagara",
-                "8:00 AM - 9:00 PM",
-                "+91 9876543210"
-            )
-        )
 
-        pharmacyList.add(
-            Pharmacy(
-                2,
-                "Ramanagara Sevaka Medicals",
-                "Kengeri, Bangalore",
-                "9:00 AM - 10:00 PM",
-                "+91 9876500000"
-            )
-        )
-
-        pharmacyList.add(
-            Pharmacy(
-                3,
-                "Magadi Health Mart",
-                "Magadi, Ramanagara",
-                "24 Hours",
-                "+91 9988776655"
-            )
-        )
 
 
 
