@@ -29,9 +29,11 @@ class LoginActivity : AppCompatActivity() {
 
             if (email.isEmpty() || password.isEmpty()) {
 
-                Toast.makeText(this,
+                Toast.makeText(
+                    this,
                     "Fill all fields",
-                    Toast.LENGTH_SHORT).show()
+                    Toast.LENGTH_SHORT
+                ).show()
 
             } else {
 
@@ -40,9 +42,11 @@ class LoginActivity : AppCompatActivity() {
 
                         if (it.isSuccessful) {
 
-                            Toast.makeText(this,
+                            Toast.makeText(
+                                this,
                                 "Login Successful",
-                                Toast.LENGTH_SHORT).show()
+                                Toast.LENGTH_SHORT
+                            ).show()
 
                             startActivity(
                                 Intent(this, MainActivity::class.java)
@@ -52,9 +56,11 @@ class LoginActivity : AppCompatActivity() {
 
                         } else {
 
-                            Toast.makeText(this,
+                            Toast.makeText(
+                                this,
                                 it.exception?.message,
-                                Toast.LENGTH_LONG).show()
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     }
             }
@@ -63,7 +69,8 @@ class LoginActivity : AppCompatActivity() {
         registerText.setOnClickListener {
 
             startActivity(
-                Intent(this, RegisterActivity::class.java))
+                Intent(this, RegisterActivity::class.java)
+            )
         }
     }
 }
